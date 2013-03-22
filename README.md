@@ -15,3 +15,8 @@ The intent of this community is to:
 JOINING
 ========
 In order to join the community, you will need to authenticate in with your github or bitbucket account. When you initially join you will have limited access until a senior member vets your ability to write code (not markup).
+
+#Build
+
+##Requirements
+ * Jekyll
