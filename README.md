@@ -20,3 +20,8 @@ In order to join the community, you will need to authenticate in with your githu
 
 ##Requirements
  * Jekyll
+
+
+#Features
+ * 1
+ * 2
