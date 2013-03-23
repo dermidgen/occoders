@@ -1,1 +1,25 @@
-html, body { margin: 0;}
+html, body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, freesans, sans-serif; font-size: 1em; background: #fafafa; }
+
+button { background: #f3f3f3; border: 1px solid #e5e5e5; border-radius: 4px; padding:.6em .8em; cursor:pointer; font-size:.86em; font-weight: bold; }
+button:hover { background: #3269A0; color:white; }
+
+#page-header > .content, #body > .content, #footer > .content { width: 960px; margin: 0 auto; }
+
+#page-header { background: white; border-bottom: 1px solid #e5e5e5; }
+#page-header::after { content: " "; height:0; width:0; clear:both; }
+
+.header .nav ul { list-style: none; margin:0; padding:0; }
+.header .nav li { display:inline-block; margin: 0 0.8em; cursor:pointer; }
+
+#user-nav { float: right; }
+#user-nav .menu { display:none; }
+#user-nav.logged-in .menu { display:block; }
+#user-nav li { margin:0 0.6em; }
+
+#page-logo, #message-center, #main-nav { display: inline-block; }
+#page-logo { margin-right:1em; }
+
+#message-center { display:none; }
+#message-center.logged-in { display:inline-block; }
+
+#footer { background:white; border-top: 1px solid #e5e5e5; font-size: 0.8em; }
