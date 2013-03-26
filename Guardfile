@@ -1,11 +1,11 @@
 ignore %r{src/www/_site/*}
 
 guard :shell do
-  watch(%r{src/server/*}) { `killall node; node test/occoders.js >> /var/log/occoders.log &` }
-  watch(%r{test/occoders\.js}) { `killall node; node test/occoders.js >> /var/log/occoders.log &` }
+  watch(%r{src/server/*}) { `killall node; cd test && node occoders.js >> /var/log/occoders.log &` }
+  watch(%r{test/occoders\.js}) { `killall node; cd test && node occoders.js >> /var/log/occoders.log &` }
   watch(%r{src/www/*}) { |m| `cd src/www && jekyll --no-server` }
   callback(:start_begin) { `killall jekyll; cd src/www && jekyll --server >> /var/log/occoders.log &` }
-  callback(:start_begin) { `killall node; node test/occoders.js >> /var/log/occoders.log &` }
+  callback(:start_begin) { `killall node; cd test && node occoders.js >> /var/log/occoders.log &` }
   callback(:stop) { `killall jekyll; killall node` }
 end
 

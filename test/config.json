@@ -1,0 +1,13 @@
+{
+	"domain":"localhost",
+	"redisHost":"localhost",
+	"redisPort":"3000",
+	"redisPassword":"redisPassword",
+	"authProviders":{
+		"github":{
+			"client_id":"",
+			"client_secret":"",
+			"redirect_uri":""
+		}
+	}
+}

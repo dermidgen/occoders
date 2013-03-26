@@ -2,6 +2,8 @@ var fs = require('fs');
 var ws = require('ws').Server;
 var http = require('http');
 
+var config = JSON.parse(fs.readFileSync('config.json','utf8'));
+
 var DEBUG_VERBOSE = 4
 var DEBUG_INFO = 3
 var DEBUG_WARNING = 2
@@ -10,8 +12,12 @@ var DEBUG_MSG = 0
 var debugLevel = 4;
 
 var http_s = http.createServer(function(req, res){
+	if (req.url === '/login/oauth/github') {
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		res.end('<!DOCTYPE html><html><head><title>Github Auth</title></head><body></body></html>');
+	}
 	res.writeHead(400, {'Content-Type': 'text/html'});
-	res.end('<html><head><title>Bad Request</title></head><body><h1>Error 400 - Bad Request</h1>This server does not accept HTTP connnections.</body></html>');
+	res.end('<!DOCTYPE html><html><head><title>Bad Request</title></head><body><h1>Error 400 - Bad Request</h1>This server does not accept HTTP connnections.</body></html>');
 }).listen(1337);
 
 var ws_s = new ws({server: http_s});
@@ -76,6 +82,7 @@ server.session = function(socketRef, userObj)
 	var socket = null;
 	var user = null;
 	var tkn = null;
+	var authd = false;
 
 	var createToken = function(){
 		var d = new Date();
@@ -90,6 +97,10 @@ server.session = function(socketRef, userObj)
 	};
 
 	this.close = function(){
+
+	};
+
+	this.authorize = function(code){
 
 	};
 
