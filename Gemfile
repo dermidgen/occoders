@@ -2,6 +2,5 @@ source "https://rubygems.org"
 group :development do
   gem 'guard'
   gem 'guard-shell'
-  gem 'guard-jekyll'
   gem 'jekyll-press'
 end

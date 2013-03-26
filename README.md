@@ -16,12 +16,13 @@ JOINING
 ========
 In order to join the community, you will need to authenticate in with your github or bitbucket account. When you initially join you will have limited access until a senior member vets your ability to write code (not markup).
 
-#Build
+#Builds
+The build system for the www uses jekyll to produce compressed, minified, static html/css/js for the site and client application.  There is also a Guard file that allows using guard to launch a local dev environment, monitor for changes, and restart dev components as needed. Guard may also be integrated with the LiveReload chrome extension to automatically reload the browser when needed.
 
 ##Requirements
- * Jekyll
-
-
-#Features
- * 1
- * 2
+ * jekyll
+ * jekyll-press
+ * guard
+ * guard-shell
+ * guard-livereload
+ * rb-inotify
